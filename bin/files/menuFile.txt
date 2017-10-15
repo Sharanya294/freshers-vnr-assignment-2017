@@ -1,0 +1,17 @@
+===========================Menu=========================
+Soups:
+1. Lemon Grass soup  Rs.80
+2. Hot and sour      Rs.100
+
+Starters:
+3. Chicken Manchuria  Rs.200
+4. Chilly Panner      Rs.150  
+
+Main Course:
+5. Chicken Biryani  Rs.250
+6. Veg Biryani      Rs.150 
+
+Desserts:
+7. Gulab Jamun     Rs.50
+8. Dal Halwa       Rs.40
+
