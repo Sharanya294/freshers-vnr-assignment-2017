@@ -5,6 +5,7 @@ import java.io.FileReader;
 
 public class  MainMenu {
 
+	/* This function will read the menu items from the menuFile.txt file and prints on the screen */
 	public static void displayMenu() {
 
 		try {

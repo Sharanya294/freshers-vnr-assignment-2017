@@ -9,21 +9,25 @@ public class Table{
 		private   ArrayList<Table> tableList;
 		
 		
-		public Table(int id, int capacity){
+		public Table(int id, int capacity){ // Parameterized constructor
 			this.tableId = id;
 			this.capacity = capacity;
 			
 		}
-		
-		public Table() {
+		/* All the tables will be initialized and added to a list when an Object is created
+		 * for Table class
+		 */
+		public Table() {  
 			initialzeTables();
 		}
 		
 		public int getTableId() {
 			return tableId;
 		}
-	
-		public  void initialzeTables() {
+		/* This Method will initialize all the tables. 
+		 * It will be invoked from the Table constructor
+		 * */
+		public  void initialzeTables() {   
 		Table t1 = new Table(1,2);
 		Table t2= new Table (2,4);
 		Table t3= new Table (3,2);
@@ -45,6 +49,10 @@ public class Table{
 		
 		//return tableList;
 		}
+		
+		/* This function will find the available tables based on the number of persons.
+		 * It will return the list of available tables.
+		 * */
 		
 		public ArrayList<Integer> findTable(int persons) {
 			ArrayList<Integer> availableTables=new ArrayList<Integer>();
@@ -77,7 +85,7 @@ public class Table{
 			return choosenTable;
 			
 		}
-		
+		/* This function will serve water to the table*/
 		public void serveWater(int tableNumber) {
 			try {
 			

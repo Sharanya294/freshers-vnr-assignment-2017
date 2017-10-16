@@ -2,6 +2,7 @@ package com.foodierestaurant;
 
 public class MainCook {
 
+	/* This function will take the order number and cooks it */
 	public static void cookTheOrder(int orderNumber) {
 		try {
 		System.out.println("\n your Order ID "+ orderNumber+ " is getting cooked." );

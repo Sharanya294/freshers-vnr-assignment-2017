@@ -10,8 +10,14 @@ public class Orders {
 
 	private  int orderID;
 	private  HashMap<String,Integer> itemsOrdered=new HashMap<String,Integer>();   
-	private static HashMap<Integer,HashMap<String,Integer> > orders = new HashMap<Integer,HashMap<String,Integer> >();
+	private static HashMap<Integer,HashMap<String,Integer> > orders = new HashMap<Integer,HashMap<String,Integer> >(); 
+	//Variable orders Stores <order id>, <<Item names, Quantity>> 
 	
+	/*This function takes the order from the customer.
+	 * Generates an order id.
+	 * Calls the orderSummary method to print the summary.
+	 * Takes no arguments and returns the order ID generated. 
+	 *  */
 	public  int takeOrder() {
 		
 		orderID = GenerateRandomNumber.generate(200,300);			// Generating a random number for order id	
@@ -20,7 +26,7 @@ public class Orders {
 		do {
 			System.out.println("Please Choose any of the above items. Press 0 for exit");
 			menuNumber = sc.nextInt();
-			switch(menuNumber) {   							
+			switch(menuNumber) {   									// Switch case for menu selection
 			case 1: 
 				System.out.println("Please tell  Quantity for Lemon Grass soup");
 				int quantity = sc.nextInt();
@@ -60,6 +66,9 @@ public class Orders {
 				System.out.println("Thank you for the order !!");
 				//System.out.println(itemsOrdered);
 				break;
+			default :
+				System.out.println("Oops ! you have choosen the item which is not present in our menu. Please re-select. ");
+				
 			}
 			
 		}while (menuNumber != 0);
