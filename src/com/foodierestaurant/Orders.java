@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Orders {
 
 	private  int orderID;
-	private  HashMap<String,Integer> itemsOrdered=new HashMap<String,Integer>();   
-	private static HashMap<Integer,HashMap<String,Integer> > orders = new HashMap<Integer,HashMap<String,Integer> >(); 
+	private  HashMap<Integer,Integer> itemsOrdered=new HashMap<Integer,Integer>();   
+	private static HashMap<Integer,HashMap<Integer,Integer> > orders = new HashMap<Integer,HashMap<Integer,Integer> >(); 
 	//Variable orders Stores <order id>, <<Item names, Quantity>> 
 	
 	/*This function takes the order from the customer.
@@ -18,81 +18,59 @@ public class Orders {
 	 * Calls the orderSummary method to print the summary.
 	 * Takes no arguments and returns the order ID generated. 
 	 *  */
-	public  int takeOrder() {
+	public  int takeOrder(Menu menu) {
 		
 		orderID = GenerateRandomNumber.generate(200,300);			// Generating a random number for order id	
 		Scanner sc = new Scanner(System.in);
-		int menuNumber=1;
-		do {
+		int menuNumber = 0;
+//		try {
+			do {
 			System.out.println("Please Choose any of the above items. Press 0 for exit");
 			menuNumber = sc.nextInt();
-			switch(menuNumber) {   									// Switch case for menu selection
-			case 1: 
-				System.out.println("Please tell  Quantity for Lemon Grass soup");
-				int quantity = sc.nextInt();
-				itemsOrdered.put("Lemon Grass soup", quantity );
-				//System.out.println(itemsOrdered);
-				break;
-			case 2:
-				System.out.println("Please tell Quantity for Hot and sour soup");
-				itemsOrdered.put("Hot and sour soup", sc.nextInt() );
-				break;
-				
-			case 3:
-				System.out.println("Please tell Quantity for Chiken Manchuria");
-				itemsOrdered.put("Chiken Manchuria", sc.nextInt() );
-				break;
-			case 4:
-				System.out.println("Please tell Quantity for Panner 65");
-				itemsOrdered.put("Chilly Panner", sc.nextInt() );
-				break;
-			case 5:
-				System.out.println("Please tell Quantity for chicken biryani");
-				itemsOrdered.put("Chicken Biryani", sc.nextInt() );
-				break;
-			case 6:
-				System.out.println("Please tell Quantity for Veg Biryani");
-				itemsOrdered.put("Veg Biryani", sc.nextInt() );
-				break;
-			case 7:
-				System.out.println("Please tell Quantity for Gulab Jamun");
-				itemsOrdered.put("Gulab Jamun", sc.nextInt() );
-				break;
-			case 8:
-				System.out.println("Please tell Quantity for Dal Halwa");
-				itemsOrdered.put("Dal Halwa", sc.nextInt() );
-				break;
-			case 0:
-				System.out.println("Thank you for the order !!");
-				//System.out.println(itemsOrdered);
-				break;
-			default :
-				System.out.println("Oops ! you have choosen the item which is not present in our menu. Please re-select. ");
-				
+			if(menuNumber!=0) {
+				if (Menu.items.containsKey(menuNumber)) {
+					Item i = menu.getItem(menuNumber);
+					System.out.println("Please tell  Quantity for " + i.getName());
+					int quantity = sc.nextInt();
+					itemsOrdered.put(i.getId(), quantity);
+				}
+				else
+					System.out.println("You have entered an item which is not present in our Menu. Please choose a correct item.");
 			}
-			
-		}while (menuNumber != 0);
+		}while(menuNumber != 0);
+//			}
+//		catch (NullPointerException e) {
+//			System.out.println("You have entered an item which is not present in our Menu. Please choose a correct item.");
+//		}
+//		
+		
 		orders.put(orderID, itemsOrdered);
 		orderSummary(orders);   							// Calling the order summary to print the summary of the order taken.
 		//System.out.println(getOrders());
-		sc.close();
 		return orderID;
 		
 	}
 	
 	/* This method prints the Summary of the order*/
-	public  void orderSummary(HashMap<Integer,HashMap<String,Integer> > order ) {
+	public  void orderSummary(HashMap<Integer,HashMap<Integer,Integer> > order) {
 		System.out.println("Here is your order summary");
-		for(HashMap.Entry<Integer, HashMap<String,Integer>> t:order.entrySet()) {
-			   Integer key = t.getKey();
-			   System.out.println("===== Order ID: " + key + " =====" );
-			   for (HashMap.Entry<String,Integer> orderVariable : t.getValue().entrySet()) {
-				   System.out.println(" Item Name: " + orderVariable.getKey()+ "  Quantity :" +orderVariable.getValue());
-				   
-			   }
-			     
+//		for(HashMap.Entry<Integer, HashMap<Integer,Integer>> t:order.entrySet()) {
+//			   Integer key = t.getKey();
+//			   System.out.println("===== Order ID: " + key + " =====" );
+//			   for (HashMap.Entry<Integer,Integer> orderVariable : t.getValue().entrySet()) {
+//				   System.out.println(" Item Name: " + orderVariable.getKey()+ "  Quantity :" +orderVariable.getValue());
+//				   
+//			   }
+//			     
+//		}
+
+		for(Integer orderIds : order.keySet()) {
+			 System.out.println("===== Order ID: " + orderIds + " =====" );
+			for(Integer orderVariable : order.get(orderIds).keySet()) {
+				System.out.println(" Item Name: " + Menu.getItem(orderVariable).getName() + "  Quantity :" + order.get(orderIds).get(orderVariable));
+			}
+			System.out.println();
 		}
-		
 	}
 
 	public int getOrderID() {
@@ -103,7 +81,7 @@ public class Orders {
 		this.orderID = orderID;
 	}
 
-	public HashMap<Integer, HashMap<String, Integer>> getOrders() {
+	public HashMap<Integer, HashMap<Integer, Integer>> getOrders() {
 		return orders;
 	}
 		
