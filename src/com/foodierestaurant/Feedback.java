@@ -40,6 +40,7 @@ public class Feedback {
 		this.comments = comments;
 	}
 
+	/* This method will take the feedback from the customer*/
 	public void takeFeedback() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("======= Feedback Form======== ");
@@ -51,9 +52,9 @@ public class Feedback {
 		System.out.println("Ambience: ");
 		ambienceRating=sc.nextInt();
 		System.out.print("Any additional comments: ");
-		comments=sc.next();
-		System.out.println("Thank you. Visit us again !!");
-		
+		sc.nextLine();
+		comments=sc.nextLine();
+		System.out.println("Thank you. Visit us again !!");		
 	}
 	
 

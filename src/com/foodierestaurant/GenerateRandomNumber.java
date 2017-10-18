@@ -1,6 +1,8 @@
 package com.foodierestaurant;
+
 import java.util.Random;
-public  class GenerateRandomNumber {
+
+public class GenerateRandomNumber {
 
 	public static int generate(int from, int to) {
 		int randomNumber;

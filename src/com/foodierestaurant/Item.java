@@ -2,16 +2,17 @@ package com.foodierestaurant;
 
 public class Item {
 	private int id;
-	
+
 	private String name;
-	
+
 	private int cost;
-	
-	Item(int id, String name, int cost ){
+
+	Item(int id, String name, int cost) {
 		this.id = id;
 		this.name = name;
 		this.cost = cost;
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -35,6 +36,5 @@ public class Item {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
+
 }
