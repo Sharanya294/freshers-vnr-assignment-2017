@@ -1,0 +1,98 @@
+					READ ME			
+
+The application starts by execution of the jar file. There are no command line arguments.To run the jar file 
+command is: java -jar jarfilename.jar
+
+To run the application you need to have a menu file.
+
+Format of menu file.
+
+<Item-id>   "<Item name>"	cost
+
+Ex : 
+
+1	    "Item 1"		20
+2	    "Item 2"		40
+
+We used tab as a delimiter for the menu file. So while adding a new item, make sure that you give tab after each column.
+
+
+After executing the jar file the customer entered data is stored in files.The path is RMS\src\files.We can see all 
+the data through this files(bills.txt,customer.txt,menuFile.txt,orders.txt) 
+
+
+jar file path is: RMS\target
+
+
+Execution output: 
+
+
+Welcome to the Foodie Restaurant !!
+Your Good Name:
+Jack
+Number of persons:
+2
+Finding for suitable tables...
+Available Tables are: [1, 2, 3, 4, 5, 6, 7]
+Choose a table to allocate from above tables
+2
+Customer Jack is allocated to table number 2
+...
+...
+Water is served on 2
+
+Jack,Please tell your order ??
+
+
+===========================Menu=========================
+        Items                   Cost(INR)
+Soups:
+1   "Lemon Grass soup"             80
+2   "Hot and sour"                 100
+
+Starters:
+3   "Chilly Panner"                150
+4   "Chicken Manchuria"            200
+
+Main Course:
+5   "Chicken Biryani"              220
+6   "Mutton Biryani"               400
+
+Deserts:
+7   "Ice Cream"                    150
+8   "Gulab Jamun"                  50
+Please Choose any of the above items. Press 0 for exit
+1
+Please tell  Quantity for "Lemon Grass soup"
+1
+Please Choose any of the above items. Press 0 for exit
+0
+Here is your order summary
+===== Order ID: 479 =====
+ Item Name: "Lemon Grass soup"  Quantity :1
+
+
+ your Order ID 479 is getting cooked.
+
+ Please wait for few mintutes while we cook the delicious food..
+
+ Food is served to the customer..
+
+ *******Your Bill********
+Bill ID:  491  Order ID: 479
+Item Name           Qauntity  Amount(INR)
+"Lemon Grass soup"     1        80
+
+Total Bill is: 80.0
+We would like to hear from you. Do you want to give feedback Jack? (Y/N)
+Y
+======= Feedback Form========
+Rate us out of 5 on each section
+Food:
+5
+Service:
+5
+Ambience:
+5
+Any additional comments: GOOD
+Thank you. Visit us again !!
