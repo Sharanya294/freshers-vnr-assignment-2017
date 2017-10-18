@@ -6,9 +6,16 @@ Ambience:
 
 ===============
 ===============
-Customer Id:69 Feedback : 
+Customer Id:19 Feedback : 
 Food: 
 Service: 
 Ambience: 
 
+===============
+===============
+Customer Id:35 Feedback : 
+Food: 5
+Service: 5
+Ambience: 5
+GOOD
 ===============

@@ -6,4 +6,5 @@ Bill ID:  670  Order ID: 213 Total Bill: 80.0
 Bill ID:  446  Order ID: 246 Total Bill: 80.0
 Bill ID:  494  Order ID: 426 Total Bill: 740.0
 Bill ID:  634  Order ID: 494 Total Bill: 760.0
-Bill ID:  386  Order ID: 391 Total Bill: 640.0
+Bill ID:  621  Order ID: 438 Total Bill: 80.0
+Bill ID:  491  Order ID: 479 Total Bill: 80.0

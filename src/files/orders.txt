@@ -25,7 +25,9 @@
  Item Name: "Lemon Grass soup"  Quantity :2
  Item Name: "Chilly Panner"  Quantity :4
 
-===== Order ID: 391 Customer ID: 69=====
- Item Name: "Hot and sour"  Quantity :2
- Item Name: "Chicken Biryani"  Quantity :2
+===== Order ID: 438 Customer ID: 19=====
+ Item Name: "Lemon Grass soup"  Quantity :1
+
+===== Order ID: 479 Customer ID: 35=====
+ Item Name: "Lemon Grass soup"  Quantity :1
 
